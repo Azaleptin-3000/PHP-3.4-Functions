@@ -1,0 +1,72 @@
+body {
+    position: relative; /* Устанавливаем относительное позиционирование для body */
+    overflow: hidden; /* Убираем прокрутку */
+    background-color: rgb(232, 228, 246); /* Цвет фона */
+}
+
+body::before {
+    content: "";
+    position: absolute;
+    top: 80px; /* Опускаем изображение ниже заголовков */
+    left: 50%; /* Устанавливаем левую границу в центр страницы */
+    transform: translateX(-50%); /* Центрируем изображение относительно центра */
+    width: 50%; /* Ширина 50% */
+    height: auto; /* Высота автоматически */
+    max-height: 50%; /* Ограничиваем высоту 50% от высоты окна просмотра */
+    background: url('img/twig-tpl.png') no-repeat center center;
+    background-size: contain; /* Уменьшаем изображение до нужного размера, сохраняя соотношение сторон */
+    opacity: 0.5; /* Прозрачность фона */
+    z-index: 0; /* Фон за контентом */
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Занимает всю высоту экрана */
+    position: relative; /* Установите позицию для использования z-index */
+}
+
+.content {
+    flex: 1; /* Контент занимает оставшееся пространство */
+    text-align: center;
+    padding: 20px;
+    position: relative; /* Позволяет использовать z-index для содержимого */
+    z-index: 1; /* Устанавливаем z-index, чтобы содержимое было выше фона */
+}
+
+/* Стили для заголовков */
+h1, h2 {
+    position: relative; /* Для z-index */
+    z-index: 2; /* Устанавливаем z-index выше, чем у фона */
+}
+
+h1 {
+    font-size: 30px;
+    color: rgb(57, 13, 94);
+    font-weight: lighter;
+    text-align: center;
+    padding-top: 10px;
+}
+
+h2 {
+    font-size: 32px;
+    color: rgb(220, 153, 6);
+    font-weight: bolder;
+    text-align: center;
+    padding-top: 10px;
+}
+
+/* Убираем боковые отступы */
+*, *::before, *::after {
+    box-sizing: border-box; /* Наследуем box-sizing для всех элементов */
+}
+
+/* Стили для футера */
+.stripe-footer {
+    background: #541964; /* Цвет фона футера */
+    color: #b201b5; /* Цвет текста футера */
+    text-align: center; /* Центрируем текст */
+    padding: 0.4rem; /* Убираем боковые отступы */
+    width: 100%; /* Футер занимает всю ширину */
+    margin-top: auto; /* Прижимаем футер к низу */
+}
