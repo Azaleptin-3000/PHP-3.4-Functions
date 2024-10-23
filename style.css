@@ -23,6 +23,7 @@ body::before {
     display: flex;
     flex-direction: column;
     min-height: 100vh; /* Занимает всю высоту экрана */
+    width: 100%; /* Занимает всю ширину */
     position: relative; /* Установите позицию для использования z-index */
 }
 
@@ -69,4 +70,6 @@ h2 {
     padding: 0.4rem; /* Убираем боковые отступы */
     width: 100%; /* Футер занимает всю ширину */
     margin-top: auto; /* Прижимаем футер к низу */
+    margin: 0; /* Убираем любые отступы */
+    position: relative; /* Позволяет установить z-index, если потребуется */
 }
